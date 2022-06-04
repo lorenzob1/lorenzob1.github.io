@@ -1,0 +1,267 @@
+/* TO GET AN IDEA OF THE CSS YOU WILL LIKELY BE USING, SEE THE LISTS BELOW. */
+
+        /* 
+        
+        Spacing 
+
+            - padding (shorthand and/or specific properties like padding-bottom, etc.)
+
+            - margin, (shorthand and/or specific properties like margin-top, etc.)
+
+            - letter-spacing, word-spacing, line-height
+
+            - width, max-width, min-width
+            - height, max-height, min-height
+
+        Typography 
+
+            - font-family, font-size, font-style, font-weight
+
+            - text-decoration, text-align
+
+            - color
+
+            - text-shadow, text-transform
+
+        Box, Layout and Border 
+
+            - border (shorthand and/or specific properties like border-top, border-bottom-radius, border-width, etc.)
+
+            - box-shadow
+
+            - display, float, align-items, align-content
+
+            - grid-template-columns, grid-column-gap
+
+            - transform
+
+        Other
+
+            - :nth()-child (to target specific child elements)
+
+            - :focus, :hover, :active (to target link states)
+
+            - @font-face or @import (to import typefaces)
+
+        */
+
+
+/* ------ START WRITING YOUR CODE BELOW ------ */
+
+/* Imported Fonts */
+
+/* used for normal paragraph text */
+@font-face {
+    font-family: "opensans-regular";
+    src: url('../fonts/sans-serif/opensans-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* used for special font in h1 and subscribe button */
+@font-face {
+    font-family: "ultra-regular";
+    src: url('../fonts/serif/ultra-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* used for extra stuff if needed */
+@font-face {
+    font-family: "rozhaone-regular";
+    src: url('../fonts/serif/rozhaone-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* Typography */
+p, h1, time, nav a, figcaption {
+    font-family: opensans-regular, Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    transform: rotate(-4deg);
+    color:#405559;
+}
+
+nav a {
+    font-weight:bold;
+    font-size: 1.25rem;
+}
+
+h2, h3 {
+    font-family: rozhaone-regular, Arial, sans-serif;
+    font-weight: lighter;
+}
+
+.highlight {
+    font-family: ultra-regular, Georgia, serif;
+    font-weight: lighter;
+    letter-spacing: 0.1rem;
+    display: inline-block;
+    border: 1px solid black;
+    padding: 0.5rem 2rem;
+    border-radius: 0.3rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: #D9D9D9;
+    background-color: #73232C;
+    box-shadow: 5px 5px 4px -1px black;
+}
+
+time {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+
+button {
+    font-family: ultra-regular, Georgia, serif;
+    font-size: 1.25rem;
+    padding: 0.75rem;
+    letter-spacing: 0.05rem;
+    color: #D9D9D9;
+    background-color: #405559;
+    box-shadow: 3px 3px 2px -1px black;
+    border-radius: 0.3rem;
+    border-width: 1px;
+}
+
+
+
+/* General Setup */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size:16px;
+}
+
+body {
+    margin: 1.5rem auto;
+    width:90%;
+    min-width:56.25rem;
+}
+
+
+
+
+/* Layout */
+nav {
+    margin-top: 3rem;
+}
+
+.main-section {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 1rem;
+}
+
+article {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+aside {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    padding-left: 0.5rem;
+    border-left: 1px solid #73232C;
+}
+
+aside p {
+    font-size: 0.75rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #405559;
+}
+
+aside h3 {
+    color:#73232C;
+}
+
+.expand {
+    font-size: .25rem;
+}
+
+.subsection { 
+    display: flex;
+    margin: 2rem 0rem;
+}
+
+footer {
+    margin-top: 4rem;
+}
+
+footer p {
+    font-size:.7rem;
+    text-align: right;
+}
+
+.copyright {
+    float: left;
+}
+
+.attribution {
+    float: right;
+    font-size: 0.7rem;
+}
+
+.subsection figure {
+    margin: 0rem 0.25rem;
+    background-color: #D9D9D9;
+}
+
+.subsection figure figcaption {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.5rem;
+}
+
+
+
+
+/* Images */
+img {
+    width: 100%;
+}
+
+figure {
+    margin: 0px;
+}
+
+.article-image {
+    width: 33%;
+    float: left;
+    margin-right: 0.75rem;
+}
+
+
+
+/* Navigation and Links*/
+a {
+    text-decoration: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    color:#405559;
+}
+
+nav a:focus {
+    color: #A66E4E;
+    box-shadow: 3px 3px 2px -1px #97A4A6;
+}
+
+nav a:hover {
+    color: #A66E4E;
+    box-shadow: 3px 3px 2px -1px #97A4A6;
+}
+
+nav a:active {
+    color: #73232C;
+}
